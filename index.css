@@ -1,21 +1,44 @@
-/** 
- * A very basic CSS reset:
- * More about CSS resets: https://meyerweb.com/eric/tools/css/reset/
- */
+
  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
   }
-  
-  h1,
-  h2 {
-    margin-bottom: 0.4em;
+
+  h1{
+    font-size: 36px;
+    margin-bottom: 10px;
   }
-  
-  p {
-    margin-bottom: 90px;
+
+  h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  h4{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  section{
+    margin-bottom: 20px;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+  }
+  .blackBanner{
+    color: white;
+    background-color: black;
   }
   
   .card {
@@ -24,15 +47,9 @@
     margin: 40px auto 0 auto;
   }
   
-  /** 
-   * Just some styling to make the card visible.
-   * Feel free to change this!
-   */
-  
   .card {
-    background-color: #d9e5a9;
+    border: 3px solid black;
     color: black;
-    border-radius: 5px;
     padding: 15px;
   }
   

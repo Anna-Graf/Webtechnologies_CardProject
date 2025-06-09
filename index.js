@@ -3,8 +3,8 @@ console.log("...fetching a random cocktail 🍹");
 // prepare dom elements
 const titleContainer = document.querySelector("[data-js='title']");
 const imgContainer = document.querySelector("[data-js='photo']");
-const ingredientsContainer = document.querySelector("[data-js='ingredients']")
-const prepContainer = document.querySelector("[data-js='preparation']")
+const ingredientsContainer = document.querySelector("[data-js='ingredients']");
+const prepContainer = document.querySelector("[data-js='preparation']");
 
 fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
   .then((response) => response.json())
@@ -16,6 +16,8 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 
     // check in console
     console.log("drink: ", drink);
+
+    console.log("testing key access: ", drink.strAlcoholic);
 
     // display title in title container
     titleContainer.innerHTML = drink.strDrink;
@@ -30,22 +32,29 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 
     //ingredients
     const ingredients = [];
-  for (let i = 1; i <= 15; i++) {
-  const ingredient = drink[`strIngredient${i}`];
-  const measure = drink[`strMeasure${i}`];
-  if (ingredient) {
-    ingredients.push(`${measure ? measure.trim() : ""} ${ingredient.trim()}`);
-  }
-}
+    for (let i = 1; i <= 15; i++) {
+      const ingredient = drink[`strIngredient${i}`];
+      const measure = drink[`strMeasure${i}`];
+      if (ingredient) {
+        ingredients.push(
+          // if (measure) {
+          //    measure.trim()
+          // } else {
+          //    ""
+          // }
+          `${measure ? measure.trim() : ""} ${ingredient.trim()}`
+        );
+      }
+    }
 
-ingredients.forEach((item) => {
-  const li = document.createElement("li");
-  li.textContent = item;
-  ingredientsContainer.appendChild(li);
-});
+    // for (let i = 0; i <= ingredients.length() - 1; i++)
+    ingredients.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      ingredientsContainer.appendChild(li);
+    });
   })
   .catch((error) => {
     // Handle any errors that occur during the fetch request
     console.error("Error:", error);
   });
-
