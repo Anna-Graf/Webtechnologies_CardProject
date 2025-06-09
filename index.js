@@ -45,6 +45,8 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
           `${measure ? measure.trim() : ""} ${ingredient.trim()}`
         );
       }
+
+      prepContainer.innerHTML = drink.strInstructions;
     }
 
     // for (let i = 0; i <= ingredients.length() - 1; i++)
