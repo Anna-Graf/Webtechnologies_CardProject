@@ -30,3 +30,4 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     // Handle any errors that occur during the fetch request
     console.error("Error:", error);
   });
+
