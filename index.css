@@ -19,13 +19,17 @@
 }
 
 .card {
+  /*background-color: rgb(224, 204, 244);*/
+  /*background-color: rgb(197, 204, 247);*/
+  background-color: rgb(197, 204, 247);
   width: 390px;
   block-size: fit-content;
-  margin: 40px auto 0 auto;
+  margin: 60px auto;
 }
 
 .card {
-  border: 3px solid black;
+  /*border: 3px solid black;*/
+  box-shadow: 5px 5px 30px 5px rgb(84, 82, 84);
   color: black;
   padding: 15px;
 }
@@ -36,12 +40,25 @@
 }
 
 .material-symbols-outlined {
+  color: rgb(0, 0, 0);
+  background-color: rgb(197, 204, 247);
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-}
-
-.icon-border {
+  cursor: pointer;
+  transition: 0.2s;
   border: 1px solid black;
   border-radius: 50%;
+  padding: 5px 20px;
+}
+
+.material-symbols-outlined:hover {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: white;
+  background-color: black;
+}
+
+.iconDateContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 img {
@@ -50,7 +67,7 @@ img {
 }
 
 .dotted-line {
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted rgb(0, 0, 0);
   padding: 20px 0px;
 }
 
@@ -60,6 +77,7 @@ img {
 
 h1 {
   font-size: 36px;
+  margin-bottom: 20px;
 }
 
 h2 {
