@@ -2,7 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: "Courier Prime", monospace;*/
+  /* font-family: "Share Tech Mono", monospace;*/
 }
 
 .header {
@@ -18,7 +20,7 @@
 
 .card {
   width: 390px;
-  height: 700px;
+  block-size: fit-content;
   margin: 40px auto 0 auto;
 }
 
@@ -50,3 +52,38 @@ img {
 .dotted-line {
   border-bottom: 1px dotted black;
   padding: 20px 0px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+}
+
+ul {
+  font-size: 14px;
+  list-style-type: none;
+}
+
+h4 {
+  font-family: "Libre Barcode 128 Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+  text-align: center;
+  padding-top: 20px;
+}

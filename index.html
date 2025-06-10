@@ -7,43 +7,63 @@
     <title>Cocktail recommendations</title>
     <link rel="stylesheet" href="index.css" />
     <script src="./index.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Barcode+128+Text&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="card">
-      <div><div class="header blackBanner">
-        <h3>Cocktails</h3>
-        <p>Library</p>
+      <div>
+        <div class="header blackBanner">
+          <h3>Cocktails</h3>
+          <p>Library</p>
+        </div>
+
+        <!-- Drink recommendation with Button & Dates -->
+        <section class="dotted-line">
+          <h1>COCKTAIL RECOMMENDATION</h1>
+          <img src="./images/arrow.png" alt="Arrow icon" width="90" />
+          <span class="material-symbols-outlined icon-border">
+            arrow_downward
+          </span>
+          <div>
+            <p id="date"></p>
+            <p id="time"></p>
+          </div>
+        </section>
+        <!-- Recommended drink Title, Photo-->
+        <section class="dotted-line">
+          <h3>DRINK:</h3>
+          <h2 data-js="title" class="uppercase">
+            <!-- display title after loading data -->
+          </h2>
+
+          <div data-js="photo" class="main-image">
+            <!-- append image later in here -->
+          </div>
+        </section>
+
+        <!-- ingredients & preperation-->
+        <section class="dotted-line">
+          <h3>INGREDIENTS:</h3>
+          <ul data-js="ingredients"></ul>
+        </section>
+
+        <section class="dotted-line">
+          <h3>PREPARATION:</h3>
+          <p data-js="preparation"></p>
+        </section>
+
+        <div><h4>Drink recommendation</h4></div>
       </div>
-
-       <!-- Drink recommendation with Button & Dates -->
-      <section class="dotted-line"><h1>Drink recommendation</h1>
-      <img src="" alt="Arrow icon"></img> 
-      <span class="material-symbols-outlined icon-border">
-        arrow_downward
-        </span>
-        <div><p id="date"></p>
-          <p id="time"></p>
-      </section>   
-<!-- Recommended drink Title, Photo-->
-      <section class="dotted-line"><h2 data-js="title">
-        <!-- display title after loading data -->
-      </h2>
-    
-      <div data-js="photo" class="main-image">
-        <!-- append image later in here -->
-      </div></section>
-
-<!-- ingredients & preperation-->
-      <section class="dotted-line"><h3>Ingredients</h3>
-      <ul data-js="ingredients"></ul>
-    </section>
-
-      <section class="dotted-line"><h3>Preparation</h3>
-        <p data-js="preparation"></p></section>
-    
-    <div class="dotted-line"><h4>Drink recommendation</h4></div>
     </div>
   </body>
 </html>
