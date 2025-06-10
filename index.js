@@ -76,4 +76,24 @@ document.getElementById("date").innerHTML =
 document.querySelector(".printbutton").addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
   printContainer.classList.add("print");
+
+  const card = document.querySelector(".card");
+  let lastScrollY = window.scrollY;
+
+  const scrolling = setInterval(() => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < lastScrollY - 2) {
+      clearInterval(scrolling);
+      return;
+    }
+
+    lastScrollY = currentScrollY;
+
+    window.scrollBy(0, 1.8);
+
+    if (card.offsetHeight >= 1980) {
+      clearInterval(scrolling);
+    }
+  }, 10);
 });

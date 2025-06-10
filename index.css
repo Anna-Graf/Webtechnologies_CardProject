@@ -29,7 +29,7 @@ body {
     max-height: 0;
   }
   to {
-    max-height: 2000px; /* or a big enough value to show all content */
+    max-height: 2000px;
   }
 }
 
@@ -124,6 +124,7 @@ h1 {
 
 h2 {
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 h3 {
