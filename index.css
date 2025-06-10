@@ -5,30 +5,6 @@
   font-family: sans-serif;
 }
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-h4 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-section {
-  margin-bottom: 20px;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -71,6 +47,6 @@ img {
   image-rendering: pixelated;
 }
 
-br {
-  border-style: dotted;
-}
+.dotted-line {
+  border-bottom: 1px dotted black;
+  padding: 20px 0px;
