@@ -15,7 +15,22 @@
 }
 
 .hidden {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+}
+
+@keyframes pixelPrint {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px; /* or a big enough value to show all content */
+  }
+}
+
+.pixel-print {
+  overflow: hidden;
+  animation: pixelPrint 10s steps(120) forwards;
 }
 
 .blackBanner {
@@ -34,9 +49,11 @@
 
 .card {
   /*border: 3px solid black;*/
-  box-shadow: 5px 5px 30px 5px rgb(84, 82, 84);
+  /*box-shadow: 5px 5px 30px 5px rgb(84, 82, 84);*/
+  overflow: visible;
   color: black;
   padding: 15px;
+  transition: 0.3s;
 }
 
 .main-image img {
@@ -97,15 +114,7 @@ h2 {
 
 h3 {
   font-size: 18px;
-}
-
-p {
-  font-size: 14px;
-}
-
-ul {
-  font-size: 14px;
-  list-style-type: none;
+  margin-bottom: 3px;
 }
 
 h4 {

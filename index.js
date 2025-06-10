@@ -76,4 +76,5 @@ document.getElementById("date").innerHTML =
 document.querySelector(".printbutton").addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
   printContainer.classList.remove("hidden");
+  printContainer.classList.add("pixel-print");
 });
