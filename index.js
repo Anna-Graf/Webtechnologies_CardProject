@@ -65,6 +65,10 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     console.error("Error:", error);
   });
 
+const time = new Date();
+document.getElementById("time").innerHTML =
+  "Time: " + time.toLocaleTimeString();
+
 const date = new Date();
 document.getElementById("date").innerHTML =
-  "Time: " + date.toLocaleTimeString();
+  "Date: " + date.toLocaleDateString();
