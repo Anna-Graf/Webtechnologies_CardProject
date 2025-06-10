@@ -94,6 +94,17 @@ body {
   justify-content: space-between;
 }
 
+.title {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 5px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 img {
   filter: grayscale(100%) brightness(1.2) contrast(1.2);
 }
@@ -101,10 +112,6 @@ img {
 .dotted-line {
   border-bottom: 1px dotted rgb(0, 0, 0);
   padding: 20px 0px;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 .printing-slit {
@@ -143,4 +150,11 @@ h4 {
   font-size: 48px;
   text-align: center;
   padding: 20px 0px 50px 0px;
+}
+
+.receiptTexture {
+  /*mix-blend-mode: difference;*/
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  background-image: url("./images/texture.jpg");
 }

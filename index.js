@@ -83,14 +83,14 @@ document.querySelector(".printbutton").addEventListener("click", () => {
   const scrolling = setInterval(() => {
     const currentScrollY = window.scrollY;
 
+    window.scrollBy(0, 1.8);
+
     if (currentScrollY < lastScrollY - 2) {
       clearInterval(scrolling);
       return;
     }
 
     lastScrollY = currentScrollY;
-
-    window.scrollBy(0, 1.8);
 
     if (card.offsetHeight >= 1980) {
       clearInterval(scrolling);
