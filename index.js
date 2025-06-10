@@ -46,7 +46,11 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         );
       }
 
-      prepContainer.innerHTML = drink.strInstructions;
+      prepContainer.innerHTML = drink.strInstructions
+        .split(/(?<=[.?!])\s+/g) // Split by sentence endings
+        .filter((line) => line.trim()) // Remove empty lines
+        .map((line) => `- ${line.trim()}`) // Add bullet points
+        .join("<br>");
     }
 
     // for (let i = 0; i <= ingredients.length() - 1; i++)
@@ -60,3 +64,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     // Handle any errors that occur during the fetch request
     console.error("Error:", error);
   });
+
+const date = new Date();
+document.getElementById("date").innerHTML =
+  "Time: " + date.toLocaleTimeString();

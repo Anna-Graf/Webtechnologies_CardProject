@@ -71,6 +71,6 @@ img {
   image-rendering: pixelated;
 }
 
-.dottedLine {
-  border-bottom: 1px;
+br {
+  border-style: dotted;
 }
