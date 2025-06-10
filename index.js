@@ -30,6 +30,12 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     img.alt = drink.strDrink;
     imgContainer.appendChild(img);
 
+    prepContainer.innerHTML = drink.strInstructions
+      .split(/(?<=[.?!])\s+/g) // Split by sentence endings
+      .filter((line) => line.trim()) // Remove empty lines
+      .map((line) => `- ${line.trim()}`) // Add bullet points
+      .join("<br>");
+
     //ingredients
     const ingredients = [];
     for (let i = 1; i <= 15; i++) {
@@ -45,12 +51,6 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
           `${measure ? measure.trim() : ""} ${ingredient.trim()}`
         );
       }
-
-      prepContainer.innerHTML = drink.strInstructions
-        .split(/(?<=[.?!])\s+/g) // Split by sentence endings
-        .filter((line) => line.trim()) // Remove empty lines
-        .map((line) => `- ${line.trim()}`) // Add bullet points
-        .join("<br>");
     }
 
     // for (let i = 0; i <= ingredients.length() - 1; i++)
@@ -72,3 +72,8 @@ document.getElementById("time").innerHTML =
 const date = new Date();
 document.getElementById("date").innerHTML =
   "Date: " + date.toLocaleDateString();
+
+document.querySelector(".printbutton").addEventListener("click", () => {
+  const printContainer = document.querySelector(".hidden");
+  printContainer.classList.remove("hidden");
+});
