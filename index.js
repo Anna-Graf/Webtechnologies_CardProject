@@ -97,3 +97,16 @@ document.querySelector(".printbutton").addEventListener("click", () => {
     }
   }, 10);
 });
+
+document.querySelector(".changeStyle").addEventListener("click", () => {
+  const body = document.body;
+  const card = document.querySelector(".card");
+
+  if (card.classList.contains("receiptTexture")) {
+    card.classList.remove("receiptTexture");
+    body.classList.add("receiptTexture2");
+  } else {
+    card.classList.add("receiptTexture");
+    body.classList.remove("receiptTexture2");
+  }
+});

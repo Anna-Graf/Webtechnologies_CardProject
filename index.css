@@ -18,6 +18,20 @@ body {
   align-items: center;
   padding: 10px 10px;
 }
+.changeStyle {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0px 5px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.changeStyle:hover {
+  background-color: black;
+  color: white;
+}
 
 .hidden {
   max-height: 0;
@@ -54,7 +68,7 @@ body {
 }
 
 .card {
-  border: 3px solid rgba(32, 31, 34, 0.406);
+  /*border: 3px solid rgba(32, 31, 34, 0.406);*/
   /*box-shadow: 5px 5px 30px 5px rgb(84, 82, 84);*/
   color: black;
   padding: 15px;
@@ -156,5 +170,13 @@ h4 {
   /*mix-blend-mode: difference;*/
   background-blend-mode: multiply;
   background-repeat: repeat;
+  background-image: url("./images/texture2.jpg");
+}
+
+.receiptTexture2 {
+  /*mix-blend-mode: difference;*/
+  mix-blend-mode: difference;
+  background-repeat: repeat;
   background-image: url("./images/texture.jpg");
+  background-color: black;
 }
