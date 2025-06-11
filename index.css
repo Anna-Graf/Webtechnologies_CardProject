@@ -18,6 +18,20 @@ body {
   align-items: center;
   padding: 10px 10px;
 }
+
+.library {
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.library:hover {
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 3px 5px;
+}
+
 .changeStyle {
   border: 1px solid black;
   border-radius: 10px;
@@ -69,7 +83,7 @@ body {
 
 .card {
   /*border: 3px solid rgba(32, 31, 34, 0.406);*/
-  /*box-shadow: 5px 5px 30px 5px rgb(84, 82, 84);*/
+  box-shadow: 5px 5px 30px 5px rgb(84, 82, 84);
   color: black;
   padding: 15px;
   padding-bottom: 0px;
@@ -96,7 +110,7 @@ body {
 }
 
 .printbutton:hover {
-  background-color: rgb(197, 204, 247);
+  background-color: rgb(255, 255, 255);
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     color: rgb(0, 0, 0);
