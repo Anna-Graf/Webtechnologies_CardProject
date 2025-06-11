@@ -79,3 +79,7 @@ document.querySelector(".changeStyle").addEventListener("click", () => {
     body.classList.remove("receiptTexture2");
   }
 });
+
+document.querySelector(".printbutton").addEventListener("click", () => {
+  ingredientsContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+});

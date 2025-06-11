@@ -110,7 +110,3 @@ document.querySelector(".changeStyle").addEventListener("click", () => {
     body.classList.remove("receiptTexture2");
   }
 });
-
-document.querySelector(".library").addEventListener("click", () => {
-  const flip = document.querySelector(".flip");
-});

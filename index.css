@@ -255,6 +255,7 @@ a {
 }
 
 .textLine:hover {
+  color: blue;
   cursor: pointer;
   font-style: oblique;
 }
