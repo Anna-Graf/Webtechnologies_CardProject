@@ -9,6 +9,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
 
       const div = document.createElement("div");
       div.textContent = ingredient;
+      div.classList.add("textLine");
       ingredientsContainer.appendChild(div);
     });
   })
@@ -25,7 +26,7 @@ const date = new Date();
 document.getElementById("date").innerHTML =
   "Date: " + date.toLocaleDateString();
 
-document.querySelector("").addEventListener("click", () => {
+document.querySelector(".printbutton").addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
   printContainer.classList.add("print");
 
@@ -61,8 +62,4 @@ document.querySelector(".changeStyle").addEventListener("click", () => {
     card.classList.add("receiptTexture");
     body.classList.remove("receiptTexture2");
   }
-});
-
-document.querySelector(".library").addEventListener("click", () => {
-  const flip = document.querySelector(".flip");
 });

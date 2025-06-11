@@ -248,3 +248,19 @@ a {
   text-decoration: none;
   font-size: 12px;
 }
+
+.textLine {
+  display: flex;
+  align-items: center;
+}
+
+.textLine::after {
+  content: "";
+  border-bottom: 1px dotted black;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.ingredientsContainer {
+  margin: 20px 0px;
+}
