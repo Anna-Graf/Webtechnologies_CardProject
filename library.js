@@ -1,5 +1,6 @@
 // prepare dom elements
 const ingredientsContainer = document.querySelector("[data-js='ingredients']");
+const chosenIngredient = document.querySelector(".chosenIngredient");
 
 fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
   .then((response) => response.json())
@@ -7,10 +8,20 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
     data.drinks.forEach((item) => {
       const ingredient = item.strIngredient1;
 
-      const div = document.createElement("div");
-      div.textContent = ingredient;
-      div.classList.add("textLine");
-      ingredientsContainer.appendChild(div);
+      const allIngredients = document.createElement("div");
+      allIngredients.textContent = ingredient;
+      allIngredients.classList.add("textLine");
+      ingredientsContainer.appendChild(allIngredients);
+
+      allIngredients.addEventListener("click", () => {
+        allIngredients.style.color = "blue";
+
+        chosenIngredient.innerHTML = ingredient;
+
+        /*const chosenIngredients = document.createElement("p");
+        chosenIngredients.textContent = ingredient;
+        chosenIngredient.appendChild(chosenIngredients);*/
+      });
     });
   })
   .catch((error) => {
@@ -26,29 +37,30 @@ const date = new Date();
 document.getElementById("date").innerHTML =
   "Date: " + date.toLocaleDateString();
 
-document.querySelector(".printbutton").addEventListener("click", () => {
+ingredientsContainer.addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
   printContainer.classList.add("print");
 
-  const card = document.querySelector(".card");
-  let lastScrollY = window.scrollY;
+  setTimeout(scrollingDown, 50);
 
-  const scrolling = setInterval(() => {
-    const currentScrollY = window.scrollY;
+  function scrollingDown() {
+    printContainer.scrollIntoView({ behavior: "auto", block: "start" });
 
-    window.scrollBy(0, 1.8);
+    requestAnimationFrame(() => {
+      let lastScrollY = window.scrollY;
 
-    if (currentScrollY < lastScrollY - 2) {
-      clearInterval(scrolling);
-      return;
-    }
+      const scrolling = setInterval(() => {
+        const currentScrollY = window.scrollY;
+        window.scrollBy(0, 1.8);
 
-    lastScrollY = currentScrollY;
-
-    if (card.offsetHeight >= 1980) {
-      clearInterval(scrolling);
-    }
-  }, 10);
+        // Stop if user scrolls manually
+        if (currentScrollY < lastScrollY) {
+          clearInterval(scrolling);
+          return;
+        }
+      }, 10);
+    });
+  }
 });
 
 document.querySelector(".changeStyle").addEventListener("click", () => {

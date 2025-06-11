@@ -254,6 +254,11 @@ a {
   align-items: center;
 }
 
+.textLine:hover {
+  cursor: pointer;
+  font-style: oblique;
+}
+
 .textLine::after {
   content: "";
   border-bottom: 1px dotted black;
@@ -263,4 +268,13 @@ a {
 
 .ingredientsContainer {
   margin: 20px 0px;
+}
+
+.chosenIngredientContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bold {
+  font-weight: bold;
 }
