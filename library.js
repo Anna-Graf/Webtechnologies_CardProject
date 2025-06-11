@@ -39,6 +39,9 @@ document.getElementById("date").innerHTML =
 
 ingredientsContainer.addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
+
+  printContainer.classList.remove("print");
+  void printContainer.offsetHeight;
   printContainer.classList.add("print");
 
   setTimeout(scrollingDown, 50);
@@ -58,6 +61,7 @@ ingredientsContainer.addEventListener("click", () => {
           clearInterval(scrolling);
           return;
         }
+        lastScrollY = currentScrollY;
       }, 10);
     });
   }
