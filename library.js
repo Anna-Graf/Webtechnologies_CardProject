@@ -44,6 +44,7 @@ function fetchDrinksByIngredient(ingredient) {
   )
     .then((response) => response.json())
     .then((data) => {
+      drinkFilter.innerHTML = "";
       data.drinks.forEach((cocktail) => {
         const drink = cocktail.strDrink;
         const thumbnail = cocktail.strDrinkThumb;
@@ -76,6 +77,11 @@ function fetchDrinksByName(drinkID) {
     .then((response) => response.json())
     .then((data) => {
       const drink = data.drinks[0];
+
+      drinkDetails.forEach((el) => (el.innerHTML = ""));
+      drinkPreparation.innerHTML = "";
+      drinkIngredient.innerHTML = "";
+      drinkImage.innerHTML = "";
 
       drinkDetails.forEach((el) => {
         el.innerHTML = drink.strDrink;
