@@ -44,10 +44,10 @@ function fetchDrinksByIngredient(ingredient) {
 
         const drinkName = document.createElement("p");
         drinkName.textContent = drink;
-        const drinkImg = document.createElement("img");
-        drinkImg.src = thumbnail;
+        //const drinkImg = document.createElement("img");
+        // drinkImg.src = thumbnail;
         drinkFilter.appendChild(drinkName);
-        drinkFilter.appendChild(drinkImg);
+        // drinkFilter.appendChild(drinkImg);
 
         // drinkFilter.innerHTML = drink;
       });
