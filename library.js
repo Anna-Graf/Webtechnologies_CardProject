@@ -2,8 +2,12 @@
 const ingredientsContainer = document.querySelector("[data-js='ingredients']");
 const chosenIngredient = document.querySelector(".chosenIngredient");
 const drinkFilter = document.querySelector("[data-js='filter']");
-const drinkDetails = document.querySelector("[data-js='details']");
+const drinkDetails = document.querySelectorAll("[data-js='details']");
+const drinkPreparation = document.querySelector("[data-js='drinkPrep']");
+const drinkIngredient = document.querySelector("[data-js='drinkIngredient']");
+const drinkImage = document.querySelector("[data-js='drinkImage']");
 
+//Get list of all ingredients and display them
 fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
   .then((response) => response.json())
   .then((data) => {
@@ -32,6 +36,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
     console.error("Error:", error);
   });
 
+//Function so that only cocktails get fetched with chosen ingredient
 function fetchDrinksByIngredient(ingredient) {
   console.log("trying to fetch drinks with ", ingredient);
   fetch(
@@ -64,7 +69,7 @@ function fetchDrinksByIngredient(ingredient) {
       });
     });
 }
-
+//Function so that only cocktails gets shown that was chosen
 function fetchDrinksByName(drinkID) {
   console.log("trying to fetch drinks with ", drinkID);
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`)
@@ -72,7 +77,38 @@ function fetchDrinksByName(drinkID) {
     .then((data) => {
       const drink = data.drinks[0];
 
-      drinkDetails.innerHTML = drink.strDrink;
+      drinkDetails.forEach((el) => {
+        el.innerHTML = drink.strDrink;
+      });
+
+      drinkPreparation.innerHTML = drink.strInstructions;
+
+      const cocktailImage = document.createElement("img");
+      cocktailImage.src = drink.strDrinkThumb;
+      drinkImage.appendChild(cocktailImage);
+
+      const ingredients = [];
+      for (let i = 1; i <= 15; i++) {
+        const ingredient = drink[`strIngredient${i}`];
+        const measure = drink[`strMeasure${i}`];
+        if (ingredient) {
+          ingredients.push(
+            // if (measure) {
+            //    measure.trim()
+            // } else {
+            //    ""
+            // }
+            `${measure ? measure.trim() : ""} ${ingredient.trim()}`
+          );
+        }
+      }
+
+      // for (let i = 0; i <= ingredients.length() - 1; i++)
+      ingredients.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        drinkIngredient.appendChild(li);
+      });
     })
     .catch((error) => {
       // Handle any errors that occur during the fetch request
@@ -80,6 +116,7 @@ function fetchDrinksByName(drinkID) {
     });
 }
 
+//Add time & Date
 const time = new Date();
 document.getElementById("time").innerHTML =
   "Time: " + time.toLocaleTimeString();
@@ -88,6 +125,7 @@ const date = new Date();
 document.getElementById("date").innerHTML =
   "Date: " + date.toLocaleDateString();
 
+//Starts printing animation & resets it
 ingredientsContainer.addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
 
@@ -95,6 +133,7 @@ ingredientsContainer.addEventListener("click", () => {
   void printContainer.offsetHeight;
   printContainer.classList.add("print");
 
+  //Auto-Scrolling
   setTimeout(scrollingDown, 50);
 
   function scrollingDown() {
@@ -118,6 +157,7 @@ ingredientsContainer.addEventListener("click", () => {
   }
 });
 
+//Style change button
 document.querySelector(".changeStyle").addEventListener("click", () => {
   const body = document.body;
   const card = document.querySelector(".card");
@@ -131,6 +171,7 @@ document.querySelector(".changeStyle").addEventListener("click", () => {
   }
 });
 
+//Scroll to ingredietns
 document.querySelector(".printbutton").addEventListener("click", () => {
   ingredientsContainer.scrollIntoView({ behavior: "smooth", block: "start" });
 });

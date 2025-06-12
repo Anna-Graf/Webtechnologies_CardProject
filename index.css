@@ -191,6 +191,11 @@ h5 {
   margin-top: 20px;
 }
 
+h6 {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
 .receiptTexture {
   /*mix-blend-mode: difference;*/
   background-blend-mode: multiply;
