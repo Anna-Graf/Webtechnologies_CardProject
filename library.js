@@ -1,6 +1,7 @@
 // prepare dom elements
 const ingredientsContainer = document.querySelector("[data-js='ingredients']");
 const chosenIngredient = document.querySelector(".chosenIngredient");
+const drinkFilter = document.querySelector("[data-js='filter']");
 
 fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
   .then((response) => response.json())
@@ -17,6 +18,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
         allIngredients.style.color = "blue";
 
         chosenIngredient.innerHTML = ingredient;
+        fetchDrinksByIngredient(ingredient);
 
         /*const chosenIngredients = document.createElement("p");
         chosenIngredients.textContent = ingredient;
@@ -28,6 +30,29 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
     // Handle any errors that occur during the fetch request
     console.error("Error:", error);
   });
+
+function fetchDrinksByIngredient(ingredient) {
+  console.log("trying to fetch drinks with ", ingredient);
+  fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      data.drinks.forEach((cocktail) => {
+        const drink = cocktail.strDrink;
+        const thumbnail = cocktail.strDrinkThumb;
+
+        const drinkName = document.createElement("p");
+        drinkName.textContent = drink;
+        const drinkImg = document.createElement("img");
+        drinkImg.src = thumbnail;
+        drinkFilter.appendChild(drinkName);
+        drinkFilter.appendChild(drinkImg);
+
+        // drinkFilter.innerHTML = drink;
+      });
+    });
+}
 
 const time = new Date();
 document.getElementById("time").innerHTML =
