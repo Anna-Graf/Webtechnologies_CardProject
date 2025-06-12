@@ -15,13 +15,12 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
       const ingredient = item.strIngredient1;
 
       const allIngredients = document.createElement("div");
+      allIngredients.innerHTML = "";
       allIngredients.textContent = ingredient;
       allIngredients.classList.add("textLine");
       ingredientsContainer.appendChild(allIngredients);
 
       allIngredients.addEventListener("click", () => {
-        allIngredients.style.color = "blue";
-
         chosenIngredient.innerHTML = ingredient;
         fetchDrinksByIngredient(ingredient);
 

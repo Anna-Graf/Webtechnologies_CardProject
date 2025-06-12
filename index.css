@@ -19,13 +19,13 @@ body {
   padding: 10px 10px;
 }
 
-.library {
+.filter {
   border: none;
   background-color: black;
   color: white;
 }
 
-.library:hover {
+.filter:hover {
   cursor: pointer;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 50%;
@@ -162,6 +162,7 @@ img {
   border-bottom: 1px dotted rgb(0, 0, 0);
   border-top: 1px dotted rgb(0, 0, 0);
   margin-bottom: 20px;
+  margin-top: 20px;
   padding: 20px 0px;
 }
 
@@ -217,14 +218,12 @@ h6 {
 .receiptTexture {
   /*mix-blend-mode: difference;*/
   background-blend-mode: multiply;
-  background-repeat: repeat;
   background-image: url("./images/texture2.jpg");
 }
 
 .receiptTexture2 {
   /*mix-blend-mode: difference;*/
   mix-blend-mode: difference;
-  background-repeat: repeat;
   background-image: url("./images/texture.jpg");
   background-color: black;
 }
