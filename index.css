@@ -146,6 +146,11 @@ a {
   padding: 20px 0px;
 }
 
+.dotted-line3 {
+  border-bottom: 1px dotted rgb(0, 0, 0);
+  padding-bottom: 20px;
+}
+
 /*styles for images*/
 .main-image img {
   width: 100%;
@@ -163,7 +168,7 @@ img {
 }
 
 .ingredientsContainer {
-  margin: 20px 0px;
+  margin-bottom: 15px;
 }
 
 .chosenIngredientContainer {

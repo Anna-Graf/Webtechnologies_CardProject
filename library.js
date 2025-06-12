@@ -80,6 +80,7 @@ function fetchDrinksByName(drinkID) {
 
       const cocktailImage = document.createElement("img");
       cocktailImage.src = drink.strDrinkThumb;
+      cocktailImage.alt = drink.strDrink;
       drinkImage.appendChild(cocktailImage);
 
       const ingredients = [];
@@ -98,7 +99,6 @@ function fetchDrinksByName(drinkID) {
         }
       }
 
-      // for (let i = 0; i <= ingredients.length() - 1; i++)
       ingredients.forEach((item) => {
         const li = document.createElement("li");
         li.textContent = item;

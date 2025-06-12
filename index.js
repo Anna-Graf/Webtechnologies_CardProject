@@ -55,7 +55,6 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       }
     }
 
-    // for (let i = 0; i <= ingredients.length() - 1; i++)
     ingredients.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = item;
@@ -89,12 +88,12 @@ document.querySelector(".printbutton").addEventListener("click", () => {
 
     window.scrollBy(0, 1.8);
 
-    if (currentScrollY < userScrollY - 2) {
+    if (currentScrollY < userScrollY) {
       clearInterval(scrolling);
       return;
     }
 
-    console.log(currentScrollY, userScrollY);
+    console.log("current:", currentScrollY, "user:", userScrollY);
 
     userScrollY = currentScrollY;
   }, 10);
