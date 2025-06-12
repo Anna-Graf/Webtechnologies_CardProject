@@ -157,6 +157,38 @@ ingredientsContainer.addEventListener("click", () => {
   }
 });
 
+//starts printing part 2
+document.querySelector(".cocktailContainer").addEventListener("click", () => {
+  const printContainer2 = document.querySelector(".hidden2");
+
+  printContainer2.classList.remove("print2");
+  void printContainer2.offsetHeight;
+  printContainer2.classList.add("print2");
+
+  //Auto-Scrolling
+  setTimeout(scrollingDown, 50);
+
+  function scrollingDown() {
+    printContainer2.scrollIntoView({ behavior: "auto", block: "start" });
+
+    requestAnimationFrame(() => {
+      let lastScrollY = window.scrollY;
+
+      const scrolling = setInterval(() => {
+        const currentScrollY = window.scrollY;
+        window.scrollBy(0, 1.8);
+
+        // Stop if user scrolls manually
+        if (currentScrollY < lastScrollY) {
+          clearInterval(scrolling);
+          return;
+        }
+        lastScrollY = currentScrollY;
+      }, 10);
+    });
+  }
+});
+
 //Style change button
 document.querySelector(".changeStyle").addEventListener("click", () => {
   const body = document.body;

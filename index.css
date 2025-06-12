@@ -65,6 +65,24 @@ body {
   animation: print 25s ease forwards;
 }
 
+.hidden2 {
+  max-height: 0;
+  overflow: hidden;
+}
+
+@keyframes print2 {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+.print2 {
+  animation: print2 25s ease forwards;
+}
+
 .blackBanner {
   color: white;
   background-color: black;
@@ -143,7 +161,7 @@ img {
 .dotted-line2 {
   border-bottom: 1px dotted rgb(0, 0, 0);
   border-top: 1px dotted rgb(0, 0, 0);
-  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px 0px;
 }
 
@@ -236,6 +254,10 @@ a {
 
 .ingredientsContainer {
   margin: 20px 0px;
+}
+
+.cocktailContainer {
+  display: block;
 }
 
 .chosenIngredientContainer {
