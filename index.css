@@ -12,82 +12,7 @@ body {
   margin-bottom: 40px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 10px;
-}
-
-.filter {
-  border: none;
-  background-color: black;
-  color: white;
-}
-
-.filter:hover {
-  cursor: pointer;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 50%;
-  padding: 3px 5px;
-}
-
-.changeStyle {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 0px 5px;
-  transition: 0.2s;
-  cursor: pointer;
-  margin: 10px;
-  background-color: rgb(255, 255, 255);
-}
-
-.changeStyle:hover {
-  background-color: black;
-  color: white;
-}
-
-.hidden {
-  max-height: 0;
-  overflow: hidden;
-}
-
-@keyframes print {
-  from {
-    max-height: 0;
-  }
-  to {
-    max-height: 2000px;
-  }
-}
-
-.print {
-  animation: print 25s ease forwards;
-}
-
-.hidden2 {
-  max-height: 0;
-  overflow: hidden;
-}
-
-@keyframes print2 {
-  from {
-    max-height: 0;
-  }
-  to {
-    max-height: 2000px;
-  }
-}
-
-.print2 {
-  animation: print2 25s ease forwards;
-}
-
-.blackBanner {
-  color: white;
-  background-color: black;
-}
-
+/*Card with printing slit*/
 .card {
   /*border: 3px solid rgba(32, 31, 34, 0.406);*/
   /*background-color: rgb(224, 204, 244);*/
@@ -106,76 +31,22 @@ body {
   perspective: 1000px;
 }
 
-.main-image img {
-  width: 100%;
-  display: block;
-}
-
-.printbutton {
-  border: 1px solid black;
-  border-radius: 50%;
-  padding: 5px 20px;
-  background-color: black;
-  transition: 0.2s;
-  cursor: pointer;
-
-  .material-symbols-outlined {
-    color: rgb(255, 255, 255);
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-  }
-}
-
-.printbutton:hover {
-  background-color: rgb(255, 255, 255);
-  .material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-    color: rgb(0, 0, 0);
-  }
-}
-
-.iconDateContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.title {
-  border: 1px solid black;
-  border-radius: 50%;
-  width: fit-content;
-  padding: 5px;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-img {
-  filter: grayscale(100%) brightness(1.2) contrast(1.2);
-}
-
-.dotted-line {
-  border-bottom: 1px dotted rgb(0, 0, 0);
-  padding: 20px 0px;
-}
-
-.dotted-line2 {
-  border-bottom: 1px dotted rgb(0, 0, 0);
-  border-top: 1px dotted rgb(0, 0, 0);
-  margin-bottom: 20px;
-  margin-top: 20px;
-  padding: 20px 0px;
-}
-
 .printing-slit {
-  z-index: -1;
   background-color: black;
   height: 25px;
-  width: 90%;
   max-width: 450px;
-  margin: -14px auto 0 auto;
+  margin: -13px auto 0 auto;
   border-radius: 8px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+/*Styling headings & a*/
 h1 {
   font-size: 36px;
   margin-bottom: 20px;
@@ -215,24 +86,33 @@ h6 {
   margin-top: 20px;
 }
 
-.receiptTexture {
-  /*mix-blend-mode: difference;*/
-  background-blend-mode: multiply;
-  background-image: url("./images/texture2.jpg");
-}
-
-.receiptTexture2 {
-  /*mix-blend-mode: difference;*/
-  mix-blend-mode: difference;
-  background-image: url("./images/texture.jpg");
-  background-color: black;
-}
-
 a {
   text-decoration: none;
   font-size: 12px;
 }
 
+/*Added styles*/
+.blackBanner {
+  color: white;
+  background-color: black;
+}
+
+.circledTitle {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 5px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/*display dotted line next to text*/
 .textLine {
   display: flex;
   align-items: center;
@@ -251,12 +131,39 @@ a {
   margin-left: 10px;
 }
 
-.ingredientsContainer {
-  margin: 20px 0px;
+/*dotted underline*/
+.dotted-line {
+  border-bottom: 1px dotted rgb(0, 0, 0);
+  padding: 20px 0px;
 }
 
-.cocktailContainer {
+/*dotted over- & underline*/
+.dotted-line2 {
+  border-bottom: 1px dotted rgb(0, 0, 0);
+  border-top: 1px dotted rgb(0, 0, 0);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px 0px;
+}
+
+/*styles for images*/
+.main-image img {
+  width: 100%;
   display: block;
+}
+
+img {
+  filter: grayscale(100%) brightness(1.2) contrast(1.2);
+}
+
+/*Containers*/
+.iconDateContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredientsContainer {
+  margin: 20px 0px;
 }
 
 .chosenIngredientContainer {
@@ -264,6 +171,113 @@ a {
   justify-content: space-between;
 }
 
-.bold {
-  font-weight: bold;
+.cocktailContainer {
+  display: block;
+}
+
+/*buttons*/
+/* Filter button*/
+.filter {
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.filter:hover {
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 3px 5px;
+}
+
+/* Button to change Style */
+.changeStyle {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0px 5px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.changeStyle:hover {
+  background-color: black;
+  color: white;
+}
+
+/*Button to start recommendation animation */
+.printbutton {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px 20px;
+  background-color: black;
+  transition: 0.2s;
+  cursor: pointer;
+
+  .material-symbols-outlined {
+    color: rgb(255, 255, 255);
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+}
+
+.printbutton:hover {
+  background-color: rgb(255, 255, 255);
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    color: rgb(0, 0, 0);
+  }
+}
+
+/*added texture*/
+.receiptTexture {
+  /*mix-blend-mode: difference;*/
+  background-blend-mode: multiply;
+  background-image: url("./images/texture2.jpg");
+}
+
+.receiptTexture2 {
+  /*mix-blend-mode: difference;*/
+  mix-blend-mode: difference;
+  background-image: url("./images/texture.jpg");
+  background-color: black;
+}
+
+/*Animations*/
+/* Animation recommendation */
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+@keyframes print {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+.print {
+  animation: print 25s ease forwards;
+}
+
+/* Animation Filter */
+.hidden2 {
+  max-height: 0;
+  overflow: hidden;
+}
+
+@keyframes print2 {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+.print2 {
+  animation: print2 25s ease forwards;
 }

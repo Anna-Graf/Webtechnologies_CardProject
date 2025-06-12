@@ -6,6 +6,7 @@ const imgContainer = document.querySelector("[data-js='photo']");
 const ingredientsContainer = document.querySelector("[data-js='ingredients']");
 const prepContainer = document.querySelector("[data-js='preparation']");
 
+//Fetch a random Cocktail
 fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
   .then((response) => response.json())
   .then((data) => {
@@ -30,6 +31,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     img.alt = drink.strDrink;
     imgContainer.appendChild(img);
 
+    //Display preparation
     prepContainer.innerHTML = drink.strInstructions
       .split(/(?<=[.?!])\s+/g) // Split by sentence endings
       .filter((line) => line.trim()) // Remove empty lines
@@ -65,6 +67,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     console.error("Error:", error);
   });
 
+//Display date & Time
 const time = new Date();
 document.getElementById("time").innerHTML =
   "Time: " + time.toLocaleTimeString();
@@ -73,31 +76,31 @@ const date = new Date();
 document.getElementById("date").innerHTML =
   "Date: " + date.toLocaleDateString();
 
+// starts printing animation
 document.querySelector(".printbutton").addEventListener("click", () => {
   const printContainer = document.querySelector(".hidden");
   printContainer.classList.add("print");
 
-  const card = document.querySelector(".card");
-  let lastScrollY = window.scrollY;
+  // starts scolling
+  let userScrollY = window.scrollY;
 
   const scrolling = setInterval(() => {
     const currentScrollY = window.scrollY;
 
     window.scrollBy(0, 1.8);
 
-    if (currentScrollY < lastScrollY - 2) {
+    if (currentScrollY < userScrollY - 2) {
       clearInterval(scrolling);
       return;
     }
 
-    lastScrollY = currentScrollY;
+    console.log(currentScrollY, userScrollY);
 
-    if (card.offsetHeight >= 1980) {
-      clearInterval(scrolling);
-    }
+    userScrollY = currentScrollY;
   }, 10);
 });
 
+// changes Style from receiptTexture to receiptTexture2
 document.querySelector(".changeStyle").addEventListener("click", () => {
   const body = document.body;
   const card = document.querySelector(".card");

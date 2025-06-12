@@ -15,7 +15,6 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
       const ingredient = item.strIngredient1;
 
       const allIngredients = document.createElement("div");
-      allIngredients.innerHTML = "";
       allIngredients.textContent = ingredient;
       allIngredients.classList.add("textLine");
       ingredientsContainer.appendChild(allIngredients);
@@ -46,26 +45,17 @@ function fetchDrinksByIngredient(ingredient) {
       drinkFilter.innerHTML = "";
       data.drinks.forEach((cocktail) => {
         const drink = cocktail.strDrink;
-        const thumbnail = cocktail.strDrinkThumb;
         const drinkID = cocktail.idDrink;
 
         const drinkName = document.createElement("p");
         drinkName.classList.add("textLine");
         drinkName.textContent = drink;
 
-        const idDrink = drinkID;
-
         drinkFilter.appendChild(drinkName);
 
         drinkName.addEventListener("click", () => {
           fetchDrinksByName(drinkID);
         });
-
-        //const drinkImg = document.createElement("img");
-        // drinkImg.src = thumbnail;
-        // drinkFilter.appendChild(drinkImg);
-
-        // drinkFilter.innerHTML = drink;
       });
     });
 }
@@ -145,18 +135,18 @@ ingredientsContainer.addEventListener("click", () => {
     printContainer.scrollIntoView({ behavior: "auto", block: "start" });
 
     requestAnimationFrame(() => {
-      let lastScrollY = window.scrollY;
+      let userScrollY = window.scrollY;
 
       const scrolling = setInterval(() => {
         const currentScrollY = window.scrollY;
         window.scrollBy(0, 1.8);
 
         // Stop if user scrolls manually
-        if (currentScrollY < lastScrollY) {
+        if (currentScrollY < userScrollY) {
           clearInterval(scrolling);
           return;
         }
-        lastScrollY = currentScrollY;
+        userScrollY = currentScrollY;
       }, 10);
     });
   }
