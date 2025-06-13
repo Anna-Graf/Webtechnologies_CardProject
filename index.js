@@ -23,8 +23,6 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     // display title in title container
     titleContainer.innerHTML = drink.strDrink;
 
-    // display drink image to the screen
-
     // first create an img tag on the fly
     const img = document.createElement("img");
     img.src = drink.strDrinkThumb;
